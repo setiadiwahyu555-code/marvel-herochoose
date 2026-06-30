@@ -1,16 +1,29 @@
 from flask import Flask, render_template
 
 
-# membuat aplikasi Flask
 app = Flask(__name__)
 
 
-# halaman utama
 @app.route("/")
 def home():
     return render_template("index.html")
 
 
-# menjalankan website
-if __name__ == "__main__":
+@app.route("/pendidikan")
+def pendidikan():
+    return render_template("pendidikan.html")
+
+
+@app.route("/pengalaman")
+def pengalaman():
+    return render_template("pengalaman.html")
+
+
+@app.route("/project")
+def project():
+    return render_template("project.html")
+
+
+
+if __name__=="__main__":
     app.run(debug=True)
